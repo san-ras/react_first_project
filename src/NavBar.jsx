@@ -52,19 +52,23 @@ export const NavBar = () => {
       </div> */}
 
       <div>
-        <span className="me-3">
-          {isLoggedIn.name
-            ? `Welcome, ${isLoggedIn.name}`
-            : "You are not logged in"}
+        <span className="me-5">
+          {isLoggedIn.name ? (
+            <>
+              <span className="me-3">Welcome, {isLoggedIn.name}</span>
+              <Link to="/profile" className="btn btn-success">
+                Profile
+              </Link>
+            </>
+          ) : (
+            <>
+              <span className="me-3">You are not logged in</span>
+              <Link to="/login" className="btn btn-info">
+                Log in
+              </Link>
+            </>
+          )}{" "}
         </span>
-        <Link
-          to={isLoggedIn.name ? "/profile" : "/login"}
-          className={`${
-            isLoggedIn.name ? "btn btn-success" : "btn btn-info"
-          } me-5`}
-        >
-          {isLoggedIn.name ? "Profile" : "Log in"}
-        </Link>
       </div>
     </nav>
   );

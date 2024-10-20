@@ -56,6 +56,7 @@ const ProductListComponent = () => {
               quantity={product.stock}
               category={product.category}
               discount={product.discountPercentage}
+              id={product.id}
               handleShow={handleShow}
             />
           ))}

@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 //import { Modal, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const ProductComponent = (props) => {
   const [show, setShow] = useState(false);
@@ -35,9 +36,9 @@ export const ProductComponent = (props) => {
                 New!
               </span>
             )}
-            <h5 className="card-title fs-5">
+            <Link to={`/products/${props.id}`} className="card-title fs-5">
               <strong>{props.title}</strong>
-            </h5>
+            </Link>
             <p className="card-text fs-6">
               Price: <strong>{props.price}</strong> eur
             </p>

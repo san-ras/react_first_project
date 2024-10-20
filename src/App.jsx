@@ -14,6 +14,7 @@ import { Delivery } from "./pages/Delivery";
 import { Terms } from "./pages/Terms";
 import { LoginPage } from "./pages/LoginPage";
 import { Profile } from "./pages/Profile";
+import { ProductDetails } from "./pages/ProductDetails";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,6 +31,7 @@ function App() {
         <Route path="/delivery" element={<Delivery />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
       </Routes>
     </>
   );

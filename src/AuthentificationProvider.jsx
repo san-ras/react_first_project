@@ -14,6 +14,7 @@ export const AuthentificationProvider = ({ children }) => {
     address: "",
     phoneNo: "",
     orders: "",
+    permissions: [],
   });
 
   const toggleIsLoggedIn = (user) => {
