@@ -37,7 +37,7 @@ export const ProductComponent = (props) => {
               </span>
             )}
             <Link to={`/products/${props.id}`} className="card-title fs-5">
-              <strong>{props.title}</strong>
+              <strong data-testid="product-title">{props.title}</strong>
             </Link>
             <p className="card-text fs-6">
               Price: <strong>{props.price}</strong> eur
@@ -49,6 +49,7 @@ export const ProductComponent = (props) => {
             <div className="mt-auto">
               <button
                 className="btn btn-primary"
+                data-testid="button-more-info"
                 onClick={() => props.handleShow(props)}
               >
                 More info

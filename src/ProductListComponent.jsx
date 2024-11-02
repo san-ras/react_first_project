@@ -19,6 +19,7 @@ const ProductListComponent = () => {
   //const [show, setShow] = useState(false);
 
   const handleShow = (product) => {
+      console.log("Opening modal for:", product);
     setModalProduct(product);
     //   setShow(true);
   };
@@ -77,7 +78,9 @@ const ProductListComponent = () => {
       {/* <Modal show={show} onHide={handleClose}> */}
       <Modal show={modalProduct} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{modalProduct?.title}</Modal.Title>
+          <Modal.Title data-testid="modal-product-title">
+            {modalProduct?.title}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="d-flex flex-column align-items-center justify-content-center">

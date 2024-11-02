@@ -5,13 +5,15 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 export const Profile = () => {
-  const { isLoggedIn, toggleIsLoggedIn } = useContext(AuthentificationContext);
+ // const { isLoggedIn, toggleIsLoggedIn } = useContext(AuthentificationContext);
+  const { isLoggedIn, logout } = useContext(AuthentificationContext);
 
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    toggleIsLoggedIn({});
-    navigate("/");
+  //  toggleIsLoggedIn({});
+  logout();
+  //  navigate("/");
   };
 
   return (

@@ -15,6 +15,10 @@ import { Terms } from "./pages/Terms";
 import { LoginPage } from "./pages/LoginPage";
 import { Profile } from "./pages/Profile";
 import { ProductDetails } from "./pages/ProductDetails";
+import { AddProduct } from "./pages/AddProduct";
+import Authentication from "./Authentication";
+import PERMISSIONS from "./persmissions";
+import { Authorization } from "./Authorization";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,8 +31,29 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/" element={<Home />} />
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/delivery" element={<Delivery />} />
+        <Route
+          element={
+            <Authorization permissions={[PERMISSIONS.CAN_READ_PRODUCTS]} />
+          }
+        >
+          <Route path="/terms" element={<Terms />} />
+        </Route>
+        <Route
+          path="/delivery"
+          element={
+            <Authentication>
+              <Delivery />
+            </Authentication>
+          }
+        />
+
+        <Route
+          element={
+            <Authorization permissions={[PERMISSIONS.CAN_UPDATE_PRODUCTS]} />
+          }
+        >
+          <Route path="/add" element={<AddProduct />} />
+        </Route>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/products/:id" element={<ProductDetails />} />

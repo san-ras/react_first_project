@@ -39,6 +39,9 @@ export const NavBar = () => {
           <Link className="nav-item nav-link fs-4" to="/contacts">
             Contacts
           </Link>
+          <Link className="nav-item nav-link fs-4" to="/add">
+            Add
+          </Link>
         </div>
       </div>
 
@@ -67,7 +70,7 @@ export const NavBar = () => {
                 Log in
               </Link>
             </>
-          )}{" "}
+          )}
         </span>
       </div>
     </nav>
